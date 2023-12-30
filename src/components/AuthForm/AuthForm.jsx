@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, AlertIcon, Box, Button, Flex, Image, Input, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Input, Text, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
@@ -24,7 +24,7 @@ const AuthForm = () => {
       <Box border={"1px solid gray"} borderRadius={4} padding={5}>
         <VStack spacing={4}>
           <Image
-            src="/logoInsta.png"
+            src="/logo.png"
             h={12}
             cursor={"pointer"}
             alt="insta logo"
