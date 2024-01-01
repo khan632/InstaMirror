@@ -31,7 +31,7 @@ const SideBar = () => {
       text: "Create",
     },
     {
-      icon: <Avatar size={"sm"} name="Areeb uddin"  />,
+      icon: <Avatar size={"sm"} name="Areeb uddin" src="/profilepic.png"  />,
       text: "Profile",
       link: "/areeb",
     },
