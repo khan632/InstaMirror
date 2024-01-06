@@ -12,7 +12,7 @@ function SuggestedHeader() {
       </Flex>
       <Link
         as={RouterLink}
-        to={"/auth"}
+        // to={"/auth"}
         fontSize={14}
         fontWeight={"medium"}
         color={"blue.400"}
