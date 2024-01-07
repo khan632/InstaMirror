@@ -10,7 +10,7 @@ import Navbar from "../../components/navbar/Navbar";
 
 const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
-  const { user, loading } = useAuthState(auth);
+  const [ user, loading ] = useAuthState(auth);
   const canSideBarRender = pathname !== "/auth" && user;
   const canNavbarRender = !user && !loading && pathname !== "/auth";
   const sidebar = (

@@ -6,8 +6,12 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import useAuthStore from "../../store/authStore";
+import _ from "lodash";
 
 const ProfileHeader = () => {
+  const authUser = useAuthStore(state => state.user);
+  const { userName, followers, following, posts, profilePicURL } = authUser;
   return (
     <Flex
       gap={{ base: 4, md: 10 }}
@@ -21,9 +25,8 @@ const ProfileHeader = () => {
         mx={"auto"}
       >
         <Avatar
-          name="as an Influncer"
           alt="profile image"
-          src="/profilepic.png"
+          src={profilePicURL}
         />
       </AvatarGroup>
 
@@ -35,7 +38,7 @@ const ProfileHeader = () => {
           alignItems={"center"}
           w={"full"}
         >
-          <Text fontSize={{ base: "sm", md: "lg" }}>AlexHardiooo0_</Text>
+          <Text fontSize={{ base: "sm", md: "lg" }}>{userName}</Text>
           <Flex gap={4} alignItems={"center"} justifyContent={"center"}>
             <Button
               bg={"white"}
@@ -49,15 +52,15 @@ const ProfileHeader = () => {
         </Flex>
           <Flex alignItems={"center"} gap={{ base: 2, sm: 4}}>
             <Text fontSize={{ base: "xs", md: "sm"}}>
-                <Text as="span" fontWeight={"bold"} mr={1}>4</Text>
+                <Text as="span" fontWeight={"bold"} mr={1}>{_.isEmpty(posts) ? 0 : posts}</Text>
                 Posts
             </Text>
             <Text fontSize={{ base: "xs", md: "sm"}}>
-                <Text as="span" fontWeight={"bold"} mr={1}>441</Text>
+                <Text as="span" fontWeight={"bold"} mr={1}>{_.isEmpty(followers) ? 0 : followers}</Text>
                 Followers
             </Text>
             <Text fontSize={{ base: "xs", md: "sm"}}>
-                <Text as="span" fontWeight={"bold"} mr={1}>714</Text>
+                <Text as="span" fontWeight={"bold"} mr={1}>{_.isEmpty(following) ? 0 : following}</Text>
                 Following
             </Text>
           </Flex>

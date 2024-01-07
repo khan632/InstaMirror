@@ -1,11 +1,15 @@
 import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
 import SuggestedHeader from "./SuggestedHeader";
 import SuggestedUser from "./SuggestedUser";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
+import _ from "lodash";
 
 const SuggestedUsers = () => {
+  const [ user ] = useAuthState(auth);
   return (
     <VStack py={8} px={4} gap={4}>
-      <SuggestedHeader />
+      { !_.isEmpty(user) && <SuggestedHeader /> }
       <Flex alignItems={"center"} justifyContent={"space-between"} w={"full"}>
         <Text fontSize={14} fontWeight={"bold"} color={"gray.500"}>
           Suggested for you

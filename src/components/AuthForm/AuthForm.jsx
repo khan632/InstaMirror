@@ -8,6 +8,8 @@ import {
 } from "@chakra-ui/react";
 import Login from "./Login";
 import Signup from "./Signup";
+import GoogleAuth from "./GoogleAuth";
+import FacebookAuth from "./FacebookAuth";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -34,16 +36,14 @@ const AuthForm = () => {
             <Box flex={2} h={"1px"} bg={"gray.400"} />
           </Flex>
 
-          {/* Login with Google */}
+          {/* Login with Google and facebook */}
           <Flex
             alignItem={"center"}
             justifyContent={"center"}
             cursor={"pointer"}
           >
-            <Image src="/google.png" w={5} alt="google img" />
-            <Text mx={2} color={"blue.500"}>
-              Log in with Google
-            </Text>
+            <GoogleAuth />
+            <FacebookAuth />
           </Flex>
         </VStack>
       </Box>
