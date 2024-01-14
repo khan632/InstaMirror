@@ -78,7 +78,7 @@ function Signup() {
         fontSize={14}
         onClick={() => signup(inputs)}
       >
-        Sign in
+        Sign up
       </Button>
     </>
   );
